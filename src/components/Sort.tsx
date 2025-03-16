@@ -32,6 +32,7 @@ const Sort:React.FC <any> = memo( ({value}) => {
   const [open, setOpen] = useState(false);
 
   const onClickListItem = (obj: SortItem) => {
+    
     dispatch(setSort(obj));
     setOpen(false);
   };
