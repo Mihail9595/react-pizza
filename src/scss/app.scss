@@ -182,6 +182,23 @@ body {
             display: none;
           }
         }
+        
+        &--disabled{
+          opacity: 0.4;
+          // cursor: none;
+          border-color: #787878;
+          
+          svg path {
+            fill: #787878
+          }
+          
+          &:active{
+            transform: none;
+          }
+          &:hover{
+            background-color: transparent;
+          }
+        }
       }
 
       b {
@@ -300,17 +317,18 @@ body {
   }
 
   &--empty {
-    margin: 0 auto;
-    width: 560px;
+    margin: 80px auto;
+    width: 620px;
     text-align: center;
 
     h2 {
-      font-size: 32px;
-      margin-bottom: 10px;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 15px;
     }
 
     p {
-      font-size: 18px;
+      font-size: 20px;
       line-height: 145.4%;
       letter-spacing: 0.01em;
       color: #777777;
@@ -334,5 +352,12 @@ body {
       font-weight: 600;
       font-size: 18px;
     }
+  }
+}
+
+.full-pizza{
+  text-align: center;
+  img, h2, h4{
+    margin-bottom: 20px;
   }
 }
