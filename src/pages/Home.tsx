@@ -5,21 +5,19 @@ import Skeleton from "../components/PizzaBlock/Skeleton";
 import Categories from "../components/Categories";
 import Pagination from "../components/Pagination";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectFilter,
-  setCategoryId,
-  setCurrentPage,
-  setFilters,
-} from "../redux/slices/filterSlice";
 //@ts-ignore
 import qs from "qs";
 import { useNavigate } from "react-router-dom";
-import {
-  fetchPizzas,
-  selectPizzaData,
-  Status,
-} from "../redux/slices/pizzaSlice";
 import { useAppDispatch } from "../redux/store";
+import {
+  setCategoryId,
+  setCurrentPage,
+  setFilters,
+} from "../redux/filter/slice";
+import { fetchPizzas } from "../redux/pizza/asyncActions";
+import { selectPizzaData } from "../redux/pizza/selectors";
+import { selectFilter } from "../redux/filter/selectors";
+import { Status } from "../redux/pizza/types";
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -32,11 +30,10 @@ const Home: React.FC = () => {
 
   const sortType = sort.sortProperty;
 
-
-  // useCallback помогает избежать перерисовки 
+  // useCallback помогает избежать перерисовки
   const onChangeCategory = useCallback((id: number) => {
     dispatch(setCategoryId(id));
-  },[]);
+  }, []);
 
   const onChangePage = (page: number) => {
     dispatch(setCurrentPage(page));

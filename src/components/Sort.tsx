@@ -1,15 +1,13 @@
 import { memo, useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { setSort, } from "../redux/slices/filterSlice";
+// import { setSort, } from "../redux/slices/filterSlice";
 import { useWhyDidYouUpdate } from "ahooks";
-
+import { setSort } from "../redux/filter/slice";
 
 type SortItem = {
   name: string;
   sortProperty: string;
 };
-
-
 
 export const sortList: SortItem[] = [
   { name: "популярности ⬇", sortProperty: "rating" },
@@ -20,19 +18,18 @@ export const sortList: SortItem[] = [
   { name: "алфавиту ⬇", sortProperty: "-title" },
 ];
 
-const Sort:React.FC <any> = memo( ({value}) => {
+const Sort: React.FC<any> = memo(({ value }) => {
   const dispatch = useDispatch();
 
   // эта функция помогает отследить перерисовки в консоль лог
   // если пропсы не поменялись перерисовки не будет
   // useWhyDidYouUpdate("Sort", { value });
-  
+
   // находим элемент на странице
   const sortRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
 
   const onClickListItem = (obj: SortItem) => {
-    
     dispatch(setSort(obj));
     setOpen(false);
   };

@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import {
-  selectCartItemById,
-  addItem,
-  CartItem,
-} from "../../redux/slices/cartSlice";
 import { Link } from "react-router-dom";
+import { selectCartItemById } from "../../redux/cart/selectors";
+import { CartItem } from "../../redux/cart/types";
+import { addItem } from "../../redux/cart/slice";
 
 type PizzaBlockProps = {
   title: string;
@@ -43,6 +41,7 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
       count: 0,
     };
     dispatch(addItem(item));
+    localStorage.setItem('cart', JSON.stringify([item]))
   };
 
   return (
