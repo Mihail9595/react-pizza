@@ -1,6 +1,6 @@
 import ContentLoader from "react-content-loader"
 
-const Skeleton = () => (
+export const Skeleton = () => (
 
   
   <div className="pizza-block-wrapper">    
@@ -23,4 +23,4 @@ const Skeleton = () => (
   </div>
   )
   
-  export default Skeleton
+  // export default Skeleton

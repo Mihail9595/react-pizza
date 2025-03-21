@@ -1,9 +1,7 @@
-import PizzaBlock from "../components/PizzaBlock";
-import Sort from "../components/Sort";
 import { useCallback, useEffect, useRef } from "react";
-import Skeleton from "../components/PizzaBlock/Skeleton";
-import Categories from "../components/Categories";
-import Pagination from "../components/Pagination";
+
+import {Pagination, Categories, Skeleton, Sort, PizzaBlock} from "../components";
+
 import { useDispatch, useSelector } from "react-redux";
 //@ts-ignore
 import qs from "qs";
@@ -24,6 +22,12 @@ const Home: React.FC = () => {
   // const dispatch = useDispatch();
   const dispatch = useAppDispatch();
   const isSearch = useRef(false);
+
+  // динамический импорт делим на чанки
+  // import("../utils/math").then((math) => {
+  //   console.log(math.add(16, 26));
+  // });
+
   const { categoryId, sort, currentPage, searchValue } =
     useSelector(selectFilter);
   const { items, status } = useSelector(selectPizzaData);

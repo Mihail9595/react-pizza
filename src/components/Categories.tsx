@@ -15,7 +15,7 @@ const categories = [
   "Закрытые",
 ];
 
-const Categories: React.FC<CategoriesProps> = memo( ({ value, onChangeCategory }) => {
+export const Categories: React.FC<CategoriesProps> = memo( ({ value, onChangeCategory }) => {
   
 
   return (
@@ -37,4 +37,4 @@ const Categories: React.FC<CategoriesProps> = memo( ({ value, onChangeCategory }
   );
 });
 
-export default Categories;
+// export default Categories;

@@ -13,8 +13,8 @@ type PizzaBlockProps = {
   types: number[];
   id: string;
 };
-
-const PizzaBlock: React.FC<PizzaBlockProps> = ({
+ 
+export const PizzaBlock: React.FC<PizzaBlockProps> = ({
   title,
   price,
   imageUrl,
@@ -102,4 +102,4 @@ const PizzaBlock: React.FC<PizzaBlockProps> = ({
   );
 };
 
-export default PizzaBlock;
+// export default PizzaBlock;

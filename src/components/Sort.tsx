@@ -18,7 +18,7 @@ export const sortList: SortItem[] = [
   { name: "алфавиту ⬇", sortProperty: "-title" },
 ];
 
-const Sort: React.FC<any> = memo(({ value }) => {
+export const Sort: React.FC<any> = memo(({ value }) => {
   const dispatch = useDispatch();
 
   // эта функция помогает отследить перерисовки в консоль лог
@@ -96,4 +96,4 @@ const Sort: React.FC<any> = memo(({ value }) => {
   );
 });
 
-export default Sort;
+// export default Sort;
